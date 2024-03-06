@@ -1,9 +1,11 @@
-from us_visa.logger import logging
-from us_visa.exception import USvisaException
-import sys
+# from us_visa.constants import DATABASE_NAME
 
-try:
-    a = 1 / "10"
-except Exception as e:
-    logging.info(e)
-    raise USvisaException(e, sys) from e
+# print(DATABASE_NAME)
+
+# # pipline  = TrainPipeline()
+# # pipline.run_pipeline()
+
+
+from us_visa.logger import logging
+
+logging.info("Welcome to our custom log")
