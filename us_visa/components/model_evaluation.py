@@ -43,8 +43,8 @@ class ModelEvaluation:
         try:
             bucket_name = self.model_eval_config.bucket_name
             model_path=self.model_eval_config.s3_model_key_path
-            os.environ["AWS_ACCESS_KEY_ID_ENV_KEY"] = "AKIAYWW6OKW4L33FQHSN"
-            os.environ["AWS_SECRET_ACCESS_KEY_ENV_KEY"] = "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"
+            # os.environ["AWS_ACCESS_KEY_ID_ENV_KEY"] = ""
+            # os.environ["AWS_SECRET_ACCESS_KEY_ENV_KEY"] = ""
             usvisa_estimator = USvisaEstimator(bucket_name=bucket_name,
                                                model_path=model_path)
 
