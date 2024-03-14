@@ -1,129 +1,126 @@
-# US-Visa-Approval-Prediction
-
-## Live matarials docs
-
-[link](https://docs.google.com/document/d/1UFiHnyKRqgx8Lodsvdzu58LbVjdWHNf-uab2WmhE0A4/edit?usp=sharing)
+# Predict My US Visa
 
 
-## Git commands
+![GitHub repo size](https://img.shields.io/github/repo-size/Alishaw99/US-VISA-APPROVAL-PREDICTION)
+![GitHub contributors](https://img.shields.io/github/contributors/scottydocs/README-template.md)
+![GitHub Repo stars](https://img.shields.io/github/stars/Alishaw99/US-VISA-APPROVAL-PREDICTION)
+![X Follow](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Falishaw99&style=social)
 
-```bash
-git add .
+"Predict My USA Visa" is a machine learning projection app to predict the approval likelihood of USA visa applications. Gain insights into approval factors, make informed decisions, and simplify the visa application process.
 
-git commit -m "Updated"
-
-git push origin main
-```
-
-## How to run?
+# Folder Structure
 
 ```bash
-conda create -n visa python=3.8 -y
+src/
+|-- __init__.py
+
+|-- components/
+|   |-- __init__.py
+|   |-- data_ingestion.py
+|   |-- data_validation.py
+|   |-- data_transformation.py
+|   |-- model_trainer.py
+|   |-- model_evaluation.py
+|   |-- model_pusher.py
+
+|-- configuration/
+|   |-- __init__.py
+
+|-- constants/
+|   |-- __init__.py
+
+|-- entity/
+|   |-- __init__.py
+|   |-- config_entity.py
+|   |-- artifact_entity.py
+
+|-- exception/
+|   |-- __init__.py
+
+|-- logger/
+|   |-- __init__.py
+
+|-- pipeline/
+|   |-- __init__.py
+|   |-- training_pipeline.py
+|   |-- prediction_pipeline.py
+
+|-- utils/
+|   |-- __init__.py
+|   |-- main_utils.py
+
+|-- app.py
+|-- requirements.txt
+|-- Dockerfile
+|-- .dockerignore
+|-- demo.py
+|-- setup.py
+
+|-- config/
+|   |-- model.yaml
+|   |-- schema.yaml
+
 ```
+
+
+# Project workflow
+
+![](https://github.com/m-umairali/predict-my-usa-visa/blob/main/workflow.jfif)
+
+# Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+* You have installed VS Code`
+* You have a `<Windows/Linux/Mac>`
+* You have Docker installed.
+
+# Installing
+
+To run the project, follow these steps:
 
 ```bash
-conda activate visa
+conda create -n usvisa python=3.8 -y
 ```
-
+```bash
+conda activate usvisa
+```
 ```bash
 pip install -r requirements.txt
 ```
 
-```bash
+
+## Using
+
+To use follow these steps:
+
+```
 python app.py
 ```
 
 
-## Workflow
+## Contributing to this project:
 
-1. constant
-2. config_entity
-3. artifact_entity
-4. conponent
-5. pipeline
-6. app.py / demo.py
+1. Fork this repository.
+2. Create a branch: `git checkout -b <branch_name>`.
+3. Make your changes and commit them: `git commit -m '<commit_message>'`
+4. Push to the original branch: `git push origin <project_name>/<location>`
+5. Create the pull request.
 
+Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-### Export the  environment variable
-```bash
+## Contributors
 
+Thanks to the following people who have contributed to this project:
 
-export MONGODB_URL="mongodb+srv://<username>:<password>...."
-
-export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
-
-export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
-```
+* [@Alishaw99](https://github.com/m-umairali) 🐛
 
 
 
-# AWS-CICD-Deployment-with-Github-Actions
+## Contact
 
-## 1. Login to AWS console.
+If you want to contact me you can reach me at tariqham@gmail.com
 
-## 2. Create IAM user for deployment
+## License
 
-	#with specific access
-
-	1. EC2 access : It is virtual machine
-
-	2. ECR: Elastic Container registry to save your docker image in aws
-
-
-	#Description: About the deployment
-
-	1. Build docker image of the source code
-
-	2. Push your docker image to ECR
-
-	3. Launch Your EC2 
-
-	4. Pull Your image from ECR in EC2
-
-	5. Lauch your docker image in EC2
-
-	#Policy:
-
-	1. AmazonEC2ContainerRegistryFullAccess
-
-	2. AmazonEC2FullAccess
-
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 136566696263.dkr.ecr.us-east-1.amazonaws.com/mlproject
-
-	
-## 4. Create EC2 machine (Ubuntu) 
-
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
-
-	sudo apt-get update -y
-
-	sudo apt-get upgrade
-	
-	#required
-
-	curl -fsSL https://get.docker.com -o get-docker.sh
-
-	sudo sh get-docker.sh
-
-	sudo usermod -aG docker ubuntu
-
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
-
-
-# 7. Setup github secrets:
-
-   - AWS_ACCESS_KEY_ID
-   - AWS_SECRET_ACCESS_KEY
-   - AWS_DEFAULT_REGION
-   - ECR_REPO
-   #Hello
-
-    
+This project uses the following license: [MIT](https://github.com/Alishaw99/US-VISA-APPROVAL-PREDICTION/edit/main/README.md).
