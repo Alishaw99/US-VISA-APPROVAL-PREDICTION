@@ -1,126 +1,88 @@
-# Predict My US Visa
+# US Visa Approval Prediction
 
+A production-grade machine learning application that predicts the likelihood of US visa application approval based on applicant profile data. Built with an end-to-end MLOps pipeline covering data ingestion through model deployment.
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Alishaw99/US-VISA-APPROVAL-PREDICTION)
-![GitHub contributors](https://img.shields.io/github/contributors/scottydocs/README-template.md)
-![GitHub Repo stars](https://img.shields.io/github/stars/Alishaw99/US-VISA-APPROVAL-PREDICTION)
-![X Follow](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Falishaw99&style=social)
+## Overview
 
-"Predict My USA Visa" is a machine learning projection app to predict the approval likelihood of USA visa applications. Gain insights into approval factors, make informed decisions, and simplify the visa application process.
+US visa approval decisions depend on a complex set of factors including employer characteristics, applicant education, wage levels, and job requirements. This project applies supervised machine learning to historical visa application data to build a predictive model that surfaces the key drivers of approval outcomes — enabling applicants and advisors to make more informed decisions.
 
-# Folder Structure
+## Key Features
 
-```bash
-src/
-|-- __init__.py
+- **End-to-end ML pipeline**: Data ingestion → validation → transformation → model training → evaluation → deployment
+- **Production-ready structure**: Modular codebase with separation of concerns across components, pipelines, entities, and utilities
+- **Automated CI/CD**: GitHub Actions workflow for continuous integration and testing
+- **Containerized deployment**: Docker and docker-compose for reproducible, portable execution
+- **Model evaluation framework**: Tracks performance metrics and manages model artifacts across training runs
 
-|-- components/
-|   |-- __init__.py
-|   |-- data_ingestion.py
-|   |-- data_validation.py
-|   |-- data_transformation.py
-|   |-- model_trainer.py
-|   |-- model_evaluation.py
-|   |-- model_pusher.py
+## Technical Stack
 
-|-- configuration/
-|   |-- __init__.py
+| Layer | Tools |
+|---|---|
+| Language | Python 3.8 |
+| ML Framework | Scikit-learn |
+| Data Processing | Pandas, NumPy |
+| Pipeline Orchestration | Custom training & prediction pipelines |
+| Configuration | YAML-based schema and model config |
+| Containerization | Docker |
+| CI/CD | GitHub Actions |
+| Version Control | Git |
 
-|-- constants/
-|   |-- __init__.py
-
-|-- entity/
-|   |-- __init__.py
-|   |-- config_entity.py
-|   |-- artifact_entity.py
-
-|-- exception/
-|   |-- __init__.py
-
-|-- logger/
-|   |-- __init__.py
-
-|-- pipeline/
-|   |-- __init__.py
-|   |-- training_pipeline.py
-|   |-- prediction_pipeline.py
-
-|-- utils/
-|   |-- __init__.py
-|   |-- main_utils.py
-
-|-- app.py
-|-- requirements.txt
-|-- Dockerfile
-|-- .dockerignore
-|-- demo.py
-|-- setup.py
-
-|-- config/
-|   |-- model.yaml
-|   |-- schema.yaml
+## Project Structure
 
 ```
+us_visa/
+├── components/
+│   ├── data_ingestion.py       # Pulls and stores raw data
+│   ├── data_validation.py      # Schema validation and drift detection
+│   ├── data_transformation.py  # Feature engineering and preprocessing
+│   ├── model_trainer.py        # Model training and hyperparameter tuning
+│   ├── model_evaluation.py     # Performance evaluation against baseline
+│   └── model_pusher.py         # Promotes model to production
+├── pipeline/
+│   ├── training_pipeline.py    # Orchestrates full training workflow
+│   └── prediction_pipeline.py  # Serves predictions for new inputs
+├── entity/
+│   ├── config_entity.py        # Configuration dataclasses
+│   └── artifact_entity.py      # Artifact path management
+└── utils/
+    └── main_utils.py           # Shared utility functions
+```
 
+## Results
 
-# Project workflow
+- Trained classification model to predict visa approval/denial outcomes
+- Identified top predictors including employer size, prevailing wage, education level, and job SOC category
+- Deployed as a web application with a user-facing prediction interface
 
-![](https://github.com/m-umairali/predict-my-usa-visa/blob/main/workflow.jfif)
-
-# Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* You have installed VS Code`
-* You have a `<Windows/Linux/Mac>`
-* You have Docker installed.
-
-# Installing
-
-To run the project, follow these steps:
+## Getting Started
 
 ```bash
+# Create and activate environment
 conda create -n usvisa python=3.8 -y
-```
-```bash
 conda activate usvisa
-```
-```bash
+
+# Install dependencies
 pip install -r requirements.txt
-```
 
-
-## Using
-
-To use follow these steps:
-
-```
+# Run the application
 python app.py
 ```
 
+Or with Docker:
 
-## Contributing to this project:
+```bash
+docker build -t usvisa-app .
+docker run -p 8080:8080 usvisa-app
+```
 
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin <project_name>/<location>`
-5. Create the pull request.
+## Relevance to Applied Research
 
-Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-
-## Contributors
-
-Thanks to the following people who have contributed to this project:
-
-* [@m-umairali](https://github.com/m-umairali) 🐛
-
-
+This project demonstrates skills directly applicable to policy and program data analysis:
+- Building reproducible, auditable data pipelines from raw administrative data
+- Applying classification models to structured government datasets
+- Structuring ML projects for maintainability and peer review
+- Automating quality checks at each stage of data processing
 
 ## Contact
 
-If you want to contact me you can reach me at tariqham@gmail.com
-
-## License
-
-This project uses the following license: [MIT](https://github.com/Alishaw99/US-VISA-APPROVAL-PREDICTION/edit/main/README.md).
+**Syed Ali** | tariqham@gmail.com | [LinkedIn](https://www.linkedin.com/in/syed-ali-12149314/) | [GitHub](https://github.com/Alishaw99)
